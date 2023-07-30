@@ -1,0 +1,28 @@
+.add-note-widget-container {
+  width: 40rem;
+  max-height: 60vh; /* Adjust the max height as per your requirement */
+  overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+  display: flex;
+  flex-direction: column;
+  background-color: #181820;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-note-widget-container::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.add-note-widget-container::-webkit-scrollbar-track {
+  background: transparent; /* Background color of the track */
+}
+
+.add-note-widget-container::-webkit-scrollbar-thumb {
+  background: #ddd; /* Color of the thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+.add-note-widget-container::-webkit-scrollbar-thumb:hover {
+  background: #bbb; /* Color of the thumb on hover */
+}
