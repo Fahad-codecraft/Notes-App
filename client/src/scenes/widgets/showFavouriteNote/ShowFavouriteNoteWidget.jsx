@@ -148,7 +148,7 @@ const ShowFavouriteNotesWidget = ({ onNoteClick, searchQuery  }) => {
       </div>
       <Snackbar
         open={snackbarOpen}
-        autoHideDuration={3000}
+        autoHideDuration={1000}
         onClose={closeSnackbar}
         message={snackbarMessage}
         sx={{ width: '100%' }}

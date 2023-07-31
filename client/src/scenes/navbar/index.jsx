@@ -13,9 +13,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from "../../state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "../../components/FlexBetween";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 
-const Navbar = ({handleSearch}) => {
+const Navbar = ({ handleSearch }) => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const [profileMenuAnchor, setProfileMenuAnchor] = useState(null);
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ const Navbar = ({handleSearch}) => {
             outlineColor: "#ffffff",
           },
         }}
-        whileHover={{scale: 1.1}}
+        whileHover={{ scale: 1.1 }}
       >
         <p className="text-[22px] text-[#ffffff] font-medium ">
           {firstLetter}
@@ -67,40 +67,34 @@ const Navbar = ({handleSearch}) => {
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
-      <FlexBetween gap="1.75rem">
+      <div className="flex items-center justify-center">
+        <img src="/logo.png" alt="" className="w-10 h-10 mr-3" />
         <Typography
           className="name-link"
           fontWeight="bold"
           fontSize="clamp(1rem, 2rem, 2.25rem)"
           color="#fff"
-          onClick={() => navigate("/home")}
-          sx={{
-            "&:hover": {
-              transition: "0.3s",
-              color: "#ffb498",
-              cursor: "pointer",
-            },
-          }}
+          fontFamily='Major Mono Display'
         >
-          NoteMaster
+          notemaster
         </Typography>
-        <div className="w-full bg-[#374151] rounded-md p-1 ml-3 pl-4">
+        <div className="w-full bg-[#374151] rounded-md p-1 ml-10 pl-4">
           <Search />
-        <input
-          type="text"
-          placeholder="Search Notes"
-          onChange={handleSearch}
-          className="bg-[#374151] outline-none h-10 w-96 rounded-md ml-3"
-        />
+          <input
+            type="text"
+            placeholder="Search Notes"
+            onChange={handleSearch}
+            className="bg-[#374151] outline-none h-10 w-96 rounded-md ml-3"
+          />
         </div>
 
-      </FlexBetween>
+      </div>
 
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
           <IconButton onClick={handleProfileMenuOpen}>
-          <ProfileCircle fullName={fullName} />
+            <ProfileCircle fullName={fullName} />
           </IconButton>
           <Menu
             anchorEl={profileMenuAnchor}
@@ -116,9 +110,9 @@ const Navbar = ({handleSearch}) => {
             }}
           >
             <MenuItem>
-            <Typography fontWeight="bold">
-            {fullName.toUpperCase()}
-            </Typography>
+              <Typography fontWeight="bold">
+                {fullName.toUpperCase()}
+              </Typography>
 
             </MenuItem>
             <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
@@ -173,7 +167,7 @@ const Navbar = ({handleSearch}) => {
         </Box>
       )}
 
-      
+
     </FlexBetween>
   );
 };

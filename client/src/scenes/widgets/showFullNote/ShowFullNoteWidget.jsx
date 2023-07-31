@@ -89,6 +89,8 @@ const ShowFullNoteWidget = ({ note }) => {
   }, [refresh, note._id]);
 
 
+
+
   return (
     <>
       <div

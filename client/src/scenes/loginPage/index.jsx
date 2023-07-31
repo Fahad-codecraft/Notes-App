@@ -16,6 +16,12 @@ const LoginPage = () => {
         m="2rem auto"
         borderRadius="1.5rem"
       >
+        <div className="flex justify-center items-center">
+        <img src="/logo.png" alt="" className="w-10 h-10 mr-2"/>
+          <p className="text-[40px] font-semibold">
+            NoteMaster
+          </p>
+        </div>
         <Form />
       </Box>
     </Box>

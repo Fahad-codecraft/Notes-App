@@ -151,6 +151,7 @@ const Form = () => {
                       "&:hover": {
                         "& .MuiOutlinedInput-notchedOutline": {
                           borderColor: "#fff",
+                          transition: "0.3s"
                         },
                       },
                     }}
@@ -182,7 +183,8 @@ const Form = () => {
                       },
                       "&:hover": {
                         "& .MuiOutlinedInput-notchedOutline": {
-                          borderColor: "white",
+                          transition: "0.3s",
+                          borderColor: "#fff",
                         },
                       },
                     }}
@@ -216,7 +218,8 @@ const Form = () => {
                   },
                   "&:hover": {
                     "& .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "white",
+                      borderColor: "#fff",
+                      transition: "0.3s"
                     },
                   },
                 }}
@@ -247,7 +250,8 @@ const Form = () => {
                   },
                   "&:hover": {
                     "& .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "white",
+                      transition: "0.3s",
+                      borderColor: "#fff",
                     },
                   },
                 }}
@@ -279,7 +283,8 @@ const Form = () => {
                     },
                     "&:hover": {
                       "& .MuiOutlinedInput-notchedOutline": {
-                        borderColor: "white",
+                        transition: "0.3s",
+                        borderColor: "#fff",
                       },
                     },
                   }}
@@ -303,7 +308,11 @@ const Form = () => {
                   p: "1rem",
                   borderRadius: "15px",
                   color: "white",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
+                 " &:hover":{
+                  transition: "0.3s",
+                  opacity: "0.6"
+                  }
                 }}
               >
                 {isLogin ? "LOGIN" : "REGISTER"}
@@ -319,6 +328,8 @@ const Form = () => {
                   "&:hover": {
                     cursor: "pointer",
                     color: "white",
+                    transition: "0.3s",
+                    opacity: "0.5"
                   },
                 }}
                 textAlign="center"
