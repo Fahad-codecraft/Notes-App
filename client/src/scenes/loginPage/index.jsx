@@ -19,7 +19,7 @@ const LoginPage = () => {
         <div className="flex justify-center items-center">
         <img src="/logo.png" alt="" className="w-10 h-10 mr-2"/>
           <p className="text-[40px] font-semibold">
-            NoteMaster
+            NoteNexus
           </p>
         </div>
         <Form />

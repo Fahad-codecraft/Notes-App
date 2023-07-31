@@ -76,7 +76,7 @@ const Navbar = ({ handleSearch }) => {
           color="#fff"
           fontFamily='Major Mono Display'
         >
-          notemaster
+          NoteNexus
         </Typography>
         <div className="w-full bg-[#374151] rounded-md p-1 ml-10 pl-4">
           <Search />

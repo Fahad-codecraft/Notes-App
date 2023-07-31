@@ -113,7 +113,7 @@ const Form = () => {
           </Box>
           <Box textAlign="center" className="mb-4">
             <Typography fontSize="30px">
-              {isLogin ? "Welcome Back to NoteMaster" : " Welcome to NoteMaster"}
+              {isLogin ? "Welcome Back to NoteNexus" : " Welcome to NoteNexus"}
             </Typography>
           </Box>
           <form onSubmit={handleSubmit}>
