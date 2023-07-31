@@ -2,7 +2,6 @@ import React, {useState, useEffect, useContext} from 'react';
 import { useSelector } from 'react-redux';
 import { NoteContext } from '../../../context/NoteContext';
 import { InputBase, Button } from "@mui/material";
-
 import "./ShowFavouriteFullNoteWidget.css"
 import {Snackbar, Alert} from '@mui/material';
 
@@ -126,6 +125,12 @@ const ShowFavouriteFullNoteWidget = ({ note }) => {
       )}
       {editable ? (
         <>
+        <div className="note-widget-container"
+             style={{
+              maxHeight: "550px",
+              overflow: 'auto'
+            }}
+            >
           <InputBase
             value={editedTitle}
             onChange={handleTitleChange}
@@ -173,9 +178,16 @@ const ShowFavouriteFullNoteWidget = ({ note }) => {
           >
             Save
           </Button>
+          </div>
         </>
       ) : (
         <>
+        <div className="note-widget-container"
+             style={{
+              maxHeight: "550px",
+              overflow: 'auto'
+            }}
+            >
           <pre
             className="text-[28px] font-bold"
             style={{ marginBottom: "10px", fontFamily: "Poppins, sans-serif" }}
@@ -211,6 +223,7 @@ const ShowFavouriteFullNoteWidget = ({ note }) => {
           >
             Edit
           </Button>
+          </div>
         </>
       )}
     </div>

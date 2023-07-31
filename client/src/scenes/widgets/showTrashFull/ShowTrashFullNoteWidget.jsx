@@ -33,7 +33,7 @@ const ShowTrashFullNoteWidget = ({ note }) => {
       <div
         className='trash-note-widget-container'
         style={{
-          maxHeight: "600px",
+          maxHeight: "550px",
           overflow: 'auto'
         }}
       >

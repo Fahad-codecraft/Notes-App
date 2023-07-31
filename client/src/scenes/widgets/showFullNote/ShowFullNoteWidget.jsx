@@ -3,6 +3,7 @@ import { NoteContext } from "../../../context/NoteContext";
 import { useSelector } from "react-redux";
 import { InputBase, Button } from "@mui/material";
 import { Snackbar, Alert } from '@mui/material';
+import "./ShowFullNoteWidget.css"
 
 const ShowFullNoteWidget = ({ note }) => {
   const token = useSelector((state) => state.token);
@@ -124,91 +125,105 @@ const ShowFullNoteWidget = ({ note }) => {
         )}
         {editable ? (
           <>
-            <InputBase
-              value={editedTitle}
-              onChange={handleTitleChange}
-              fullWidth
-              multiline
-              style={{
-                fontSize: "28px",
-                border: "none",
-                outline: "none",
-                backgroundColor: "transparent",
-                color: "white",
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: "bold",
-              }}
-            />
-            <InputBase
-              value={editedContent}
-              onChange={handleContentChange}
-              fullWidth
-              multiline
-              style={{
-                fontSize: "18px",
-                marginBottom: "10px",
-                border: "none",
-                outline: "none",
-                resize: "none",
-                backgroundColor: "transparent",
-                color: "white",
-                fontFamily: "Poppins, sans-serif",
-              }}
-            />
-            <Button
-              onClick={handleSave}
-              style={{
-                width: "100%",
-                height: '3rem',
-                backgroundColor: "#0f9d58",
-                color: "white",
-                padding: "5px 10px",
-                border: "none",
-                borderRadius: "4px",
-                cursor: "pointer",
-                fontWeight: "bold",
-              }}
+            <div className="note-widget-container"
+             style={{
+              maxHeight: "550px",
+              overflow: 'auto'
+            }}
             >
-              Save
-            </Button>
+              <InputBase
+                value={editedTitle}
+                onChange={handleTitleChange}
+                fullWidth
+                multiline
+                style={{
+                  fontSize: "28px",
+                  border: "none",
+                  outline: "none",
+                  backgroundColor: "transparent",
+                  color: "white",
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "bold",
+                }}
+              />
+              <InputBase
+                value={editedContent}
+                onChange={handleContentChange}
+                fullWidth
+                multiline
+                style={{
+                  fontSize: "18px",
+                  marginBottom: "10px",
+                  border: "none",
+                  outline: "none",
+                  resize: "none",
+                  backgroundColor: "transparent",
+                  color: "white",
+                  fontFamily: "Poppins, sans-serif",
+                }}
+              />
+              <Button
+                onClick={handleSave}
+                style={{
+                  width: "100%",
+                  height: '3rem',
+                  backgroundColor: "#0f9d58",
+                  color: "white",
+                  padding: "5px 10px",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                }}
+              >
+                Save
+              </Button>
+            </div>
           </>
         ) : (
           <>
-            <pre
-              className="text-[28px] font-bold"
-              style={{ marginBottom: "10px", fontFamily: "Poppins, sans-serif" }}
+            <div className="note-widget-container"
+             style={{
+              maxHeight: "550px",
+              overflow: 'auto'
+            }}
             >
-              {editedTitle}
-            </pre>
-            <pre
-              style={{
-                marginBottom: "10px",
-                whiteSpace: "pre-wrap",
-                wordBreak: "break-word",
-                overflowWrap: "anywhere",
-                lineHeight: "1.5",
-                fontFamily: "Poppins, sans-serif",
-              }}
-              className="text-[18px]"
-            >
-              {editedContent}
-            </pre>
-            <Button
-              onClick={handleEdit}
-              style={{
-                width: "100%",
-                height: '3rem',
-                backgroundColor: "#436ee8",
-                color: "white",
-                padding: "5px 10px",
-                border: "none",
-                borderRadius: "4px",
-                cursor: "pointer",
-                fontWeight: "bold",
-              }}
-            >
-              Edit
-            </Button>
+              <pre
+                className="text-[28px] font-bold"
+                style={{ marginBottom: "10px", fontFamily: "Poppins, sans-serif" }}
+              >
+                {editedTitle}
+              </pre>
+              <pre
+                style={{
+                  marginBottom: "10px",
+                  whiteSpace: "pre-wrap",
+                  wordBreak: "break-word",
+                  overflowWrap: "anywhere",
+                  lineHeight: "1.5",
+                  fontFamily: "Poppins, sans-serif",
+                }}
+                className="text-[18px]"
+              >
+                {editedContent}
+              </pre>
+              <Button
+                onClick={handleEdit}
+                style={{
+                  width: "100%",
+                  height: '3rem',
+                  backgroundColor: "#436ee8",
+                  color: "white",
+                  padding: "5px 10px",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                }}
+              >
+                Edit
+              </Button>
+            </div>
           </>
         )}
       </div>
