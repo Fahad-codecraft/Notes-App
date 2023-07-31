@@ -9,6 +9,7 @@ import { NoteContext } from "../../../context/NoteContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { Snackbar, Alert } from "@mui/material";
+import "./ShowFavouriteNoteWidget.css"
 
 
 const ShowFavouriteNotesWidget = ({ onNoteClick, searchQuery  }) => {
@@ -83,13 +84,17 @@ const ShowFavouriteNotesWidget = ({ onNoteClick, searchQuery  }) => {
   const filteredNotes = notes.filter((note) =>
     note.favourite &&
     !note.isTrashed &&
+    !note.isArchived &&
     (note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
      note.content.toLowerCase().includes(searchQuery.toLowerCase())));
 
 
   return (
     <>
-      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3 ">
+      <div className="bg-[#374151] rounded-md h-[600px] ml-4 w-full p-3 note-widget-container"
+      style={{
+        overflow: 'auto'
+      }}>
         {filteredNotes.map(({ _id, title, content }) => (
           <>
             <FlexBetween key={_id}>

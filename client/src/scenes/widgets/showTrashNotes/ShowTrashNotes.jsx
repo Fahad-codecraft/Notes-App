@@ -9,6 +9,7 @@ import { NoteContext } from "../../../context/NoteContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { Snackbar, Alert } from "@mui/material";
+import "./ShowTrashNotes.css"
 
 const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
   const token = useSelector((state) => state.token);
@@ -87,7 +88,7 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
 
   return (
     <>
-      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3 ">
+      <div className="bg-[#374151] rounded-md h-[600px] ml-4 w-full p-3 note-widget-container">
         {filteredNotes.map(({ _id, title, content }) => (
           <>
             <FlexBetween key={_id}>

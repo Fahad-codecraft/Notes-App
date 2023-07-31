@@ -14,6 +14,7 @@ import { NoteContext } from "../../../context/NoteContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { Snackbar, Alert } from "@mui/material";
+import "./ShowNotesWidget.css"
 
 const ShowNotesWidget = ({ onNoteClick, searchQuery }) => {
   const token = useSelector((state) => state.token);
@@ -109,7 +110,9 @@ const ShowNotesWidget = ({ onNoteClick, searchQuery }) => {
 
   return (
     <>
-      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3">
+      <div className="bg-[#374151] rounded-md h-[600px] ml-4 w-full p-3 note-widget-container" style={{
+              overflow: 'auto'
+            }}>
         {filteredNotes.map(({ _id, title, content, favourite }) => (
           <>
             <FlexBetween key={_id}>

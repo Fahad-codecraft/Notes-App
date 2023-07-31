@@ -1,0 +1,25 @@
+.note-widget-container {
+  overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 8px;
+
+}
+
+.note-widget-container::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.note-widget-container::-webkit-scrollbar-track {
+  background: transparent; /* Background color of the track */
+}
+
+.note-widget-container::-webkit-scrollbar-thumb {
+  background: #ddd; /* Color of the thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+.note-widget-container::-webkit-scrollbar-thumb:hover {
+  background: #bbb; /* Color of the thumb on hover */
+}
