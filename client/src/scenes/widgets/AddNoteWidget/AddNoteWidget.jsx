@@ -24,7 +24,7 @@ const AddNoteWidget = ({handleClosePopup}) => {
       content: content
     };
 
-    const response = await fetch(`http://localhost:2001/create/note`, {
+    const response = await fetch(`https://notes-app-puce-omega.vercel.app/create/note`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

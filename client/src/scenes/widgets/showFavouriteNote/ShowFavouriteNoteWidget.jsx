@@ -25,7 +25,7 @@ const ShowFavouriteNotesWidget = ({ onNoteClick, searchQuery  }) => {
     setSnackbarSeverity("info");
     setSnackbarMessage("Getting Favourites");
     setSnackbarOpen(true);
-    const response = await fetch("http://localhost:2001/fav", {
+    const response = await fetch("https://notes-app-puce-omega.vercel.app/fav", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -49,7 +49,7 @@ const ShowFavouriteNotesWidget = ({ onNoteClick, searchQuery  }) => {
       )
     );
 
-    await fetch(`http://localhost:2001/trash/note/${_id}/`, {
+    await fetch(`https://notes-app-puce-omega.vercel.app/trash/note/${_id}/`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -73,7 +73,7 @@ const ShowFavouriteNotesWidget = ({ onNoteClick, searchQuery  }) => {
       )
     );
 
-    await fetch(`http://localhost:2001/note/${_id}/favourite`, {
+    await fetch(`https://notes-app-puce-omega.vercel.app/note/${_id}/favourite`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

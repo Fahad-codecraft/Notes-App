@@ -25,7 +25,7 @@ const ShowArchivedNotes = ({ onNoteClick, searchQuery }) => {
     setSnackbarSeverity("info");
     setSnackbarMessage("Getting Archived Note");
     setSnackbarOpen(true);
-    const response = await fetch("http://localhost:2001/archived", {
+    const response = await fetch("https://notes-app-puce-omega.vercel.app/archived", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -48,7 +48,7 @@ const ShowArchivedNotes = ({ onNoteClick, searchQuery }) => {
       )
     );
 
-    await fetch(`http://localhost:2001/archive/note/${_id}/`, {
+    await fetch(`https://notes-app-puce-omega.vercel.app/archive/note/${_id}/`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -66,7 +66,7 @@ const ShowArchivedNotes = ({ onNoteClick, searchQuery }) => {
       )
     );
 
-    await fetch(`http://localhost:2001/trash/note/${_id}/`, {
+    await fetch(`https://notes-app-puce-omega.vercel.app/trash/note/${_id}/`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
     });

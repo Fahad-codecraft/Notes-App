@@ -23,7 +23,7 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
     setSnackbarSeverity("info");
     setSnackbarMessage("Getting Trashed Note");
     setSnackbarOpen(true);
-    const response = await fetch("http://localhost:2001/trashbin", {
+    const response = await fetch("https://notes-app-puce-omega.vercel.app/trashbin", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -46,7 +46,7 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
       )
     );
 
-    await fetch(`http://localhost:2001/trash/note/${_id}/`, {
+    await fetch(`https://notes-app-puce-omega.vercel.app/trash/note/${_id}/`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -60,7 +60,7 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
     setSnackbarOpen(true);
     setNotes(notes.filter((note) => note._id !== _id));
 
-    await fetch(`http://localhost:2001/delete/note/${_id}`, {
+    await fetch(`https://notes-app-puce-omega.vercel.app/delete/note/${_id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });

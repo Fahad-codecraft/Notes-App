@@ -54,7 +54,7 @@ const ShowFavouriteFullNoteWidget = ({ note }) => {
     setSnackbarSeverity("info");
     setSnackbarMessage("Editing Note");
     setSnackbarOpen(true);
-    await fetch(`http://localhost:2001/note/${_id}/edit`, {
+    await fetch(`https://notes-app-puce-omega.vercel.app/note/${_id}/edit`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ const ShowFavouriteFullNoteWidget = ({ note }) => {
   
   const getNote = async () => {
     try {
-      const response = await fetch(`http://localhost:2001/note/${note._id}`, {
+      const response = await fetch(`https://notes-app-puce-omega.vercel.app/note/${note._id}`, {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -48,7 +48,7 @@ const Form = () => {
 
   const register = async (values, onSubmitProps) => {
     const savedUserResponse = await fetch(
-      "http://localhost:2001/auth/register",
+      "https://notes-app-puce-omega.vercel.app/auth/register",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -64,7 +64,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:2001/auth/login", {
+    const loggedInResponse = await fetch("https://notes-app-puce-omega.vercel.app/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
