@@ -31,7 +31,7 @@ const ShowNoteWidget = ({ title, content = '', onClick }) => {
   return (
     <div className='flex flex-col h-24'>
       <p className='font-semibold text-white text-lg mb-3 mt-2' onClick={onClick}><span className='font-light text-[#d1d1d2] text-sm'>Title: </span>{title}</p>
-      <p className='mb-2' onClick={onClick}>{truncatedContent}</p>
+      <p className='mb-2 cursor-pointer' onClick={onClick}>{truncatedContent}</p>
     </div>
   );
 };
