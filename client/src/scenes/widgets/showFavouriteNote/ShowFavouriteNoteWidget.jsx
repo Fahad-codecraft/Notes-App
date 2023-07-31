@@ -96,8 +96,8 @@ const ShowFavouriteNotesWidget = ({ onNoteClick, searchQuery  }) => {
         overflow: 'auto'
       }}>
         {filteredNotes.map(({ _id, title, content }) => (
-          <>
-            <FlexBetween key={_id}>
+          <div key={_id}>
+            <FlexBetween >
               <motion.div
                 className="flex hover:bg-[#181820] w-full justify-between rounded-lg m-1 p-3"
                 whileHover={{ scale: 1.05 }}
@@ -148,7 +148,7 @@ const ShowFavouriteNotesWidget = ({ onNoteClick, searchQuery  }) => {
               </motion.div>
             </FlexBetween>
             <hr className="border-[#2d2d39]  border-[2px] rounded-full" />
-          </>
+          </div>
         ))}
       </div>
       <Snackbar

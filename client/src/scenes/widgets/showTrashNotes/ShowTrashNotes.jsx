@@ -17,7 +17,7 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
   const { refresh } = useContext(NoteContext);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState("")
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success")
 
 
   const getTrashNotes = async () => {
@@ -90,8 +90,8 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
     <>
       <div className="bg-[#374151] rounded-md h-[600px] ml-4 w-full p-3 note-widget-container">
         {filteredNotes.map(({ _id, title, content }) => (
-          <>
-            <FlexBetween key={_id}>
+          <div key={_id}>
+            <FlexBetween>
               <motion.div
                 className="flex hover:bg-[#181820] w-full justify-between rounded-lg m-1 p-3"
                 whileHover={{ scale: 1.05 }}
@@ -142,7 +142,7 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
               </motion.div>
             </FlexBetween>
             <hr className="border-[#2d2d39]  border-[2px] rounded-full" />
-          </>
+          </div>
         ))}
       </div>
       <Snackbar

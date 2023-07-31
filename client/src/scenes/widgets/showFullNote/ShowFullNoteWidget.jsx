@@ -15,7 +15,7 @@ const ShowFullNoteWidget = ({ note }) => {
   const [notes, setNotes] = useState([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState("")
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success")
 
   const handleEdit = () => {
     updateEditedNote({

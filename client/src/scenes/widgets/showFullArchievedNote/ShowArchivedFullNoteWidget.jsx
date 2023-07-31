@@ -6,7 +6,7 @@ import {Snackbar, Alert} from '@mui/material';
 const ShowArchivedFullNoteWidget = ({ note }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState("")
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success")
 
 
   const handleEdit = () => {
