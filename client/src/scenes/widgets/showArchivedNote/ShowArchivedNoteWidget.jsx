@@ -94,13 +94,13 @@ const ShowArchivedNotes = ({ onNoteClick, searchQuery }) => {
 
   return (
     <>
-      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3 ">
+      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3 relative">
         <div
-          className="note-widget-container"
-          style={{
-            maxHeight: "640px",
-            overflow: 'auto'
-          }}
+        className="note-widget-container absolute"
+        style={{
+          maxHeight: "95%",
+          overflow: 'auto'
+        }}
         >
           {filteredNotes.map(({ _id, title, content }) => (
             <div key={_id}>

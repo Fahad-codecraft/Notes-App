@@ -88,11 +88,11 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
 
   return (
     <>
-      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3 ">
-      <div
-        className="note-widget-container"
+      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3 relative">
+        <div
+        className="note-widget-container absolute"
         style={{
-          maxHeight: "640px",
+          maxHeight: "95%",
           overflow: 'auto'
         }}
         >
