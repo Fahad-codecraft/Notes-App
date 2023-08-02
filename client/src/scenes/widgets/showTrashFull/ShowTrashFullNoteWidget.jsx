@@ -31,10 +31,10 @@ const ShowTrashFullNoteWidget = ({ note }) => {
       position: 'relative',
     }}>
       <div
-        className='trash-note-widget-container'
+        className='trash-note-widget-container absolute h-full w-[99%]'
         style={{
-          maxHeight: "550px",
-          overflow: 'auto'
+          maxHeight: "95%",
+          overflow: 'auto',
         }}
       >
         <pre className='text-[28px] font-bold' style={{ marginBottom: '10px', fontFamily: 'Poppins, sans-serif', }}>{note.title}</pre>

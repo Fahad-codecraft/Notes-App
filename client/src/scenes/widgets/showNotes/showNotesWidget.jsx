@@ -114,7 +114,7 @@ const ShowNotesWidget = ({ onNoteClick, searchQuery }) => {
         <div
         className="note-widget-container"
         style={{
-          maxHeight: "550px",
+          maxHeight: "640px",
           overflow: 'auto'
         }}
         >

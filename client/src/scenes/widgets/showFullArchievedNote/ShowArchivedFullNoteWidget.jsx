@@ -22,7 +22,7 @@ const ShowArchivedFullNoteWidget = ({ note }) => {
 
   return (
     <>
-    <div className='rounded-md h-full ml-10 w-full p-3 ' style={{
+    <div className='rounded-md h-full ml-10 w-full p-3 relative' style={{
       backgroundColor: '#374151',
       borderRadius: '4px',
       padding: '10px',
@@ -31,10 +31,10 @@ const ShowArchivedFullNoteWidget = ({ note }) => {
       position: 'relative',
     }}>
       <div
-        className='trash-note-widget-container'
+        className='trash-note-widget-container absolute h-full w-[99%]'
         style={{
-          maxHeight: "550px",
-          overflow: 'auto'
+          maxHeight: "95%",
+          overflow: 'auto',
         }}
       >
         <pre className='text-[28px] font-bold' style={{ marginBottom: '10px', fontFamily: 'Poppins, sans-serif', }}>{note.title}</pre>

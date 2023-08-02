@@ -126,10 +126,10 @@ const ShowFullNoteWidget = ({ note }) => {
         {editable ? (
           <>
             <div className="note-widget-container"
-             style={{
-              maxHeight: "550px",
-              overflow: 'auto'
-            }}
+              style={{
+                maxHeight: "640px",
+                overflow: 'auto'
+              }}
             >
               <InputBase
                 value={editedTitle}
@@ -182,11 +182,12 @@ const ShowFullNoteWidget = ({ note }) => {
           </>
         ) : (
           <>
-            <div className="note-widget-container"
-             style={{
-              maxHeight: "550px",
-              overflow: 'auto'
-            }}
+            <div
+              className='trash-note-widget-container absolute h-full w-[99%]'
+              style={{
+                maxHeight: "95%",
+                overflow: 'auto',
+              }}
             >
               <pre
                 className="text-[28px] font-bold"

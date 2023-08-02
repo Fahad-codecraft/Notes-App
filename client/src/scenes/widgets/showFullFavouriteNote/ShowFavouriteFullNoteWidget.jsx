@@ -127,7 +127,7 @@ const ShowFavouriteFullNoteWidget = ({ note }) => {
         <>
         <div className="note-widget-container"
              style={{
-              maxHeight: "550px",
+              maxHeight: "640px",
               overflow: 'auto'
             }}
             >
@@ -182,12 +182,13 @@ const ShowFavouriteFullNoteWidget = ({ note }) => {
         </>
       ) : (
         <>
-        <div className="note-widget-container"
-             style={{
-              maxHeight: "550px",
-              overflow: 'auto'
-            }}
-            >
+        <div
+        className='trash-note-widget-container absolute h-full w-[99%]'
+        style={{
+          maxHeight: "95%",
+          overflow: 'auto',
+        }}
+      >
           <pre
             className="text-[28px] font-bold"
             style={{ marginBottom: "10px", fontFamily: "Poppins, sans-serif" }}
