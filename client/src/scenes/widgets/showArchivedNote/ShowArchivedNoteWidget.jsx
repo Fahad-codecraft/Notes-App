@@ -2,13 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { DeleteOutlineOutlined, Unarchive } from "@mui/icons-material";
-import {  IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import FlexBetween from "../../../components/FlexBetween";
 import ShowArchivedNote from "./ShowArchivedNote";
 import { NoteContext } from "../../../context/NoteContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
-import {Snackbar, Alert} from "@mui/material";
+import { Snackbar, Alert } from "@mui/material";
 import "./ShowArchivedNoteWidget.css"
 
 
@@ -19,7 +19,7 @@ const ShowArchivedNotes = ({ onNoteClick, searchQuery }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("info")
-  
+
 
 
   const getArchiveNotes = async () => {
@@ -85,73 +85,79 @@ const ShowArchivedNotes = ({ onNoteClick, searchQuery }) => {
   };
 
 
-  const filteredNotes = notes.filter((note) => 
-  note.isArchived && 
-  !note.isTrashed &&
-  (note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  note.content.toLowerCase().includes(searchQuery.toLowerCase())));
+  const filteredNotes = notes.filter((note) =>
+    note.isArchived &&
+    !note.isTrashed &&
+    (note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      note.content.toLowerCase().includes(searchQuery.toLowerCase())));
 
 
   return (
     <>
-      <div className="bg-[#374151] rounded-md h-[600px] ml-4 w-full p-3 note-widget-container" style={{
-              overflow: 'auto'
-            }}>
-        {filteredNotes.map(({ _id, title, content }) => (
-          <div key={_id}>
-            <FlexBetween>
-              <motion.div
-                className="flex hover:bg-[#181820] w-full justify-between rounded-lg m-1 p-3"
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="flex flex-col">
-                  <ShowArchivedNote
-                    title={title}
-                    content={content}
-                    onClick={() => onNoteClick({ _id, title, content })}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 0.8, color: "red" }}
-                    exit={{ scale: 0 }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <Unarchive
-                      fontSize="large"
-                      sx={{
-                        color: "white",
-                        mr: "1rem",
-                        cursor: "pointer",
-                        fontSize: "35px",
-                      }}
-                      onClick={() => unArchiveNote(_id)}
+      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3 ">
+        <div
+          className="note-widget-container"
+          style={{
+            maxHeight: "550px",
+            overflow: 'auto'
+          }}
+        >
+          {filteredNotes.map(({ _id, title, content }) => (
+            <div key={_id}>
+              <FlexBetween>
+                <motion.div
+                  className="flex hover:bg-[#181820] w-full justify-between rounded-lg m-1 p-3"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="flex flex-col">
+                    <ShowArchivedNote
+                      title={title}
+                      content={content}
+                      onClick={() => onNoteClick({ _id, title, content })}
                     />
-                  </motion.div>
-                  <IconButton>
+                  </div>
+                  <div className="flex items-center">
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 0.8, color: "red" }}
                       exit={{ scale: 0 }}
                       whileHover={{ scale: 1.02 }}
                     >
-                      <DeleteOutlineOutlined
+                      <Unarchive
+                        fontSize="large"
                         sx={{
                           color: "white",
+                          mr: "1rem",
                           cursor: "pointer",
                           fontSize: "35px",
                         }}
-                        onClick={() => trashNote(_id)}
+                        onClick={() => unArchiveNote(_id)}
                       />
                     </motion.div>
-                  </IconButton>
-                </div>
-              </motion.div>
-            </FlexBetween>
-            <hr className="border-[#2d2d39]  border-[2px] rounded-full" />
-          </div>
-        ))}
+                    <IconButton>
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 0.8, color: "red" }}
+                        exit={{ scale: 0 }}
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        <DeleteOutlineOutlined
+                          sx={{
+                            color: "white",
+                            cursor: "pointer",
+                            fontSize: "35px",
+                          }}
+                          onClick={() => trashNote(_id)}
+                        />
+                      </motion.div>
+                    </IconButton>
+                  </div>
+                </motion.div>
+              </FlexBetween>
+              <hr className="border-[#2d2d39]  border-[2px] rounded-full" />
+            </div>
+          ))}
+        </div>
       </div>
       <Snackbar
         open={snackbarOpen}
@@ -160,7 +166,7 @@ const ShowArchivedNotes = ({ onNoteClick, searchQuery }) => {
         message={snackbarMessage}
         sx={{ width: '100%' }}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        
+
       >
         <Alert severity={snackbarSeverity} variant="filled">{snackbarMessage}</Alert>
       </Snackbar>

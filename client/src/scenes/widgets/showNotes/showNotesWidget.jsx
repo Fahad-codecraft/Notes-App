@@ -105,14 +105,19 @@ const ShowNotesWidget = ({ onNoteClick, searchQuery }) => {
       !note.isTrashed &&
       !note.isArchived &&
       (note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      note.content.toLowerCase().includes(searchQuery.toLowerCase()))
+        note.content.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   return (
     <>
-      <div className="bg-[#374151] rounded-md h-[600px] ml-4 w-full p-3 note-widget-container" style={{
-              overflow: 'auto'
-            }}>
+      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3">
+        <div
+        className="note-widget-container"
+        style={{
+          maxHeight: "550px",
+          overflow: 'auto'
+        }}
+        >
         {filteredNotes.map(({ _id, title, content, favourite }) => (
           <div key={_id}>
             <FlexBetween >
@@ -193,8 +198,9 @@ const ShowNotesWidget = ({ onNoteClick, searchQuery }) => {
               </motion.div>
             </FlexBetween>
             <hr className="border-[#2d2d39]  border-[2px] rounded-full" />
-            </div>
+          </div>
         ))}
+         </div>
       </div>
       <Snackbar
         open={snackbarOpen}

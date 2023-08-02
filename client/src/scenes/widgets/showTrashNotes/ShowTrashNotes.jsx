@@ -88,7 +88,14 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
 
   return (
     <>
-      <div className="bg-[#374151] rounded-md h-[600px] ml-4 w-full p-3 note-widget-container">
+      <div className="bg-[#374151] rounded-md h-full ml-4 w-full p-3 ">
+      <div
+        className="note-widget-container"
+        style={{
+          maxHeight: "550px",
+          overflow: 'auto'
+        }}
+        >
         {filteredNotes.map(({ _id, title, content }) => (
           <div key={_id}>
             <FlexBetween>
@@ -144,6 +151,7 @@ const ShowTrashNotes = ({ onNoteClick, searchQuery }) => {
             <hr className="border-[#2d2d39]  border-[2px] rounded-full" />
           </div>
         ))}
+        </div>
       </div>
       <Snackbar
         open={snackbarOpen}
